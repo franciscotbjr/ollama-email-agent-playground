@@ -72,7 +72,7 @@ mod tests {
 {
   "intent": "SendEmail",
   "params": {
-    "recipient": "eva@company.com",
+    "recipient": "turtle.patient@wildkingdom.org",
     "message": "Meeting update"
   }
 }
@@ -81,7 +81,7 @@ mod tests {
 
         let parsed = message.parsed_content().unwrap();
         assert_eq!(parsed.intent, Intent::SendEmail);
-        assert_eq!(parsed.params.recipient(), Some("eva@company.com"));
+        assert_eq!(parsed.params.recipient(), Some("turtle.patient@wildkingdom.org"));
         assert_eq!(parsed.params.message(), Some("Meeting update"));
     }
 
@@ -163,13 +163,13 @@ mod tests {
     fn test_deserialization_from_json() {
         let json_str = r#"{
   "role": "assistant",
-  "content": "```json\n{\n  \"intent\": \"SendEmail\",\n  \"params\": {\n    \"recipient\": \"Eva\",\n    \"message\": \"Meeting canceled\"\n  }\n}\n```"
+  "content": "```json\n{\n  \"intent\": \"SendEmail\",\n  \"params\": {\n    \"recipient\": \"Turtle\",\n    \"message\": \"Meeting canceled\"\n  }\n}\n```"
 }"#;
 
         let message: OllamaResponseMessage = serde_json::from_str(json_str).unwrap();
         assert_eq!(message.role, "assistant");
         assert!(message.raw_content().contains("SendEmail"));
-        assert!(message.raw_content().contains("Eva"));
+        assert!(message.raw_content().contains("Turtle"));
     }
 
     #[test]

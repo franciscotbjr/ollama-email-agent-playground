@@ -94,7 +94,7 @@ use ollama_ai_agents_playground::agent::{Agent, classifier::ClassifierAgent};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let input = "Send an email to Eva informing that I won't be able to attend the meeting";
+    let input = "Send an email to Turtle informing that I won't be able to attend the meeting";
     
     let classifier_agent = ClassifierAgent::new();
     let result = classifier_agent.process(input).await;

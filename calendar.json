@@ -98,7 +98,7 @@
           {
             "contactId": "c002",
             "name": "Elephant Graceful",
-            "email": "elephant.graceful@outlook.com",
+            "email": "elephant.graceful@wildkingdom.org",
             "status": "tentative",
             "type": "required"
           }
@@ -400,7 +400,7 @@
           {
             "contactId": "c002",
             "name": "Elephant Graceful",
-            "email": "elephant.graceful@outlook.com",
+            "email": "elephant.graceful@wildkingdom.org",
             "status": "maybe",
             "type": "optional"
           }

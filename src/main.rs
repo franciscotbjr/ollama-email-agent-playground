@@ -8,7 +8,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("🚀 Starting asynchronous processing...");
     println!("🚀 Starting classifier...");
     println!();
-    let input = "Envie um e-mail para Eva informando que não vou poder comparecer à reunião e que peço desculpas por avisar tão em cima da hora.";
+    let input = "Envie um e-mail para Turtle informando que não vou poder comparecer à reunião e que peço desculpas por avisar tão em cima da hora.";
     let intent_classifier_agent = IntentClassifierAgent::new();
     let result = intent_classifier_agent.process(input).await;
     match result {

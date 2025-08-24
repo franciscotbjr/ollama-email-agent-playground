@@ -50,7 +50,7 @@ mod tests {
 {
   "intent": "SendEmail",
   "params": {
-    "recipient": "Eva",
+    "recipient": "Turtle",
     "message": "informing her that I won't be able to attend the meeting"
   }
 }
@@ -58,7 +58,7 @@ mod tests {
 
         let result = OllamaResponseContent::extract_json_from_markdown(markdown_content).unwrap();
         assert!(result.contains("SendEmail"));
-        assert!(result.contains("Eva"));
+        assert!(result.contains("Turtle"));
     }
 
     #[test]
@@ -67,7 +67,7 @@ mod tests {
 {
   "intent": "SendEmail",
   "params": {
-    "recipient": "Eva",
+    "recipient": "Turtle",
     "message": "informing her that I won't be able to attend the meeting"
   }
 }
@@ -75,7 +75,7 @@ mod tests {
 
         let result = OllamaResponseContent::from_markdown_json(markdown_content).unwrap();
         assert_eq!(result.intent, Intent::SendEmail);
-        assert_eq!(result.params.recipient(), Some("Eva"));
+        assert_eq!(result.params.recipient(), Some("Turtle"));
         assert_eq!(
             result.params.message(),
             Some("informing her that I won't be able to attend the meeting")

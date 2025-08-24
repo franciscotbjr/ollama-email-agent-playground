@@ -45,14 +45,14 @@ mod tests {
     #[test]
     fn test_serialization_to_json() {
         let params = Params::with_values(
-            "eva@company.com".to_string(),
+            "turtle.patient@wildkingdom.org".to_string(),
             "informing her that I won't be able to attend the meeting".to_string(),
         );
         let result = ClassificationResult::new(Intent::SendEmail, params);
 
         let json_string = result.to_json_string().unwrap();
         assert!(json_string.contains("SendEmail"));
-        assert!(json_string.contains("eva@company.com"));
+        assert!(json_string.contains("turtle.patient@wildkingdom.org"));
         assert!(json_string.contains("informing her"));
     }
 

@@ -96,12 +96,12 @@ mod tests {
     #[test]
     fn test_serialization_to_json() {
         let params = Params::with_values(
-            "eva@company.com".to_string(),
+            "turtle.patient@wildkingdom.org".to_string(),
             "I won't be able to attend the meeting".to_string(),
         );
 
         let json_string = params.to_json_string().unwrap();
-        assert!(json_string.contains("eva@company.com"));
+        assert!(json_string.contains("turtle.patient@wildkingdom.org"));
         assert!(json_string.contains("I won't be able to attend"));
         assert!(json_string.contains("recipient"));
         assert!(json_string.contains("message"));
